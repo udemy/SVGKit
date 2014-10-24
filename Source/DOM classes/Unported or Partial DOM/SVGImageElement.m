@@ -87,7 +87,7 @@ CGImageRef SVGImageCGImage(AppleNativeImageRef img)
 	NSData *imageData;
 	NSURL* imageURL = [NSURL URLWithString:_href];
 	SVGKSource* effectiveSource = nil;
-	if( [_href hasPrefix:@"data:"] || [_href hasPrefix:@"http:"] )
+	if( [_href hasPrefix:@"file:"] || [_href hasPrefix:@"http:"] || [_href hasPrefix:@"data:"] )
 		imageData = [NSData dataWithContentsOfURL:imageURL];
 	else
 	{
